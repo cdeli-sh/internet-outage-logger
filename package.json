@@ -1,0 +1,13 @@
+{
+  "name": "internet-outage-logger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "is-online": "^10.0.0",
+    "node-fetch": "^3.3.2",
+    "node-windows": "^1.0.0-beta.8"
+  }
+}
