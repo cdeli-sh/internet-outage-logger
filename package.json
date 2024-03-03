@@ -4,6 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "service:install": "node service-manager.js install",
+    "service:uninstall": "node service-manager.js uninstall"
+  },
   "dependencies": {
     "dotenv": "^16.4.5",
     "is-online": "^10.0.0",

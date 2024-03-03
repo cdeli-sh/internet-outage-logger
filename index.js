@@ -43,3 +43,5 @@ setInterval(() => {
     }
   });
 }, 1000);
+
+sendDiscordMessage('Internet Monitor started');

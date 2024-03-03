@@ -1,4 +1,4 @@
-var Service = require('node-windows').Service;
+import { Service } from 'node-windows';
 
 var svc = new Service({
   name: 'Internet Monitor',
