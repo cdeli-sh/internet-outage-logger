@@ -9,6 +9,8 @@ let timeDownEnd = 0;
 
 let discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
+let start = true;
+
 function sendDiscordMessage(message) {
   fetch(discordWebhookUrl, {
     method: 'POST',
@@ -22,6 +24,10 @@ function sendDiscordMessage(message) {
 setInterval(() => {
   isOnline().then(online => {
     if (online) {
+      if (start) {
+        sendDiscordMessage('Internet Monitor started');
+        start = false;
+      }
       if (isInternetDown) {
         timeDownEnd = Date.now();
         timeDown = timeDownEnd - timeDownStart;
@@ -36,6 +42,7 @@ setInterval(() => {
       }
     } else {
       if (!isInternetDown) {
+
         timeDownStart = Date.now();
         console.log('Internet is down');
         isInternetDown = true;
@@ -43,5 +50,3 @@ setInterval(() => {
     }
   });
 }, 1000);
-
-sendDiscordMessage('Internet Monitor started');
